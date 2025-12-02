@@ -1,1 +1,9 @@
+# Ignore all Django pyc files
+MediHouse/**/**/*.pyc
+MediHouse/**/*.pyc
 
+# Ignore all SQLites
+MediHouse/**/*.sqlite3
+
+# Ignore Environment Settings
+MediHouse/*/.env
