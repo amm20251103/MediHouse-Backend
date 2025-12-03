@@ -45,24 +45,23 @@ DEBUG = env('MEDIHOUSE_DEBUG', default=True)
 
 # Build paths inside the project like this: PROJECT_PATH / 'subdir'.
 # Most of these settings can be overriden by ENV
-SETTINGS_PATH = env('SCM_SETTINGS_PATH', default=Path(__file__).resolve().parent)
-BASE_PATH = env('SCM_BASE_PATH', default=SETTINGS_PATH.parent)
-APP_PATH = env('SCM_APP_PATH', default=BASE_PATH.parent.parent.parent)
-LOG_PATH = env('SCM_LOG_PATH', default=path.join(APP_PATH, 'logs'))
+SETTINGS_PATH = env('MEDIHOUSE_SETTINGS_PATH', default=Path(__file__).resolve().parent)
+BASE_PATH = env('MEDIHOUSE_BASE_PATH', default=SETTINGS_PATH.parent)
+APP_PATH = env('MEDIHOUSE_APP_PATH', default=BASE_PATH.parent.parent.parent)
+LOG_PATH = env('MEDIHOUSE_LOG_PATH', default=path.join(APP_PATH, 'logs'))
 
 # Server data path
 # In Ubuntu systems that use NGINX the data path should be in /var/www/html
-WWW_PATH = env('SCM_WWW_PATH', default=path.join('/', 'var', 'www', 'html'))
-DATA_PATH = path.join(WWW_PATH, 'scm', 'data')
+WWW_PATH = env('MEDIHOUSE_WWW_PATH', default=path.join('/', 'var', 'www', 'html'))
+DATA_PATH = path.join(WWW_PATH, 'medihouse', 'data')
 
 # Media location
-MEDIA_ROOT = env('SCM_MEDIA_ROOT', default=path.join(DATA_PATH, 'media'))
-MEDIA_URL = env('SCM_MEDIA_URL', default='/media/')
-
+MEDIA_ROOT = env('MEDIHOUSE_MEDIA_ROOT', default=path.join(DATA_PATH, 'media'))
+MEDIA_URL = env('MEDIHOUSE_MEDIA_URL', default='/media/')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-STATIC_ROOT = env('SCM_STATIC_ROOT', default=path.join(DATA_PATH, 'static'))
-STATIC_URL = env('SCM_STATIC_URL', default='/static/')
+STATIC_ROOT = env('MEDIHOUSE_STATIC_ROOT', default=path.join(DATA_PATH, 'static'))
+STATIC_URL = env('MEDIHOUSE_STATIC_URL', default='/static/')
 STATICFILES_DIRS = (path.join(SETTINGS_PATH, 'static'),)
 
 
